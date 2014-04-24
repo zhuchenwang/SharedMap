@@ -23,25 +23,30 @@ object AsyncMap {
 
 private class AsyncMap[K, V](owner: ActorRef) extends Actor with ActorLogging {
 
-  private val map = mutable.HashMap.empty[K, V]
+  private val actualMap = mutable.HashMap.empty[K, UpdatedValue[V]]
 
   private val subscriptions = mutable.HashMap.empty[K, mutable.ListBuffer[Subscriber]]
 
   def receive: Receive = {
-    case Get(key: K, timestamp) => map get key match {
-        case Some(value) => sender ! Value(value, timestamp)
-        case None => subscribe(key, Subscriber(sender, timestamp))
+    case Get(key: K, preNum, timestamp) => actualMap get key match {
+        case Some(value) if value.updated >= preNum => sender ! Value(value.value, timestamp)
+        case _ => subscribe(key, Subscriber(sender, preNum, timestamp))
       }
 
-    case Set(key: K, value: V) => map update(key, value)
-      publish(key, value)
+    // only set the value if current number is after the existing number
+    case Set(key: K, value: V, currentNum) if (actualMap get key map {_.updated} getOrElse 0) <= currentNum =>
+      //println(s"set $key -> $value: $currentNum")
+      actualMap update(key, UpdatedValue(value, currentNum))
+      publish(key, UpdatedValue(value, currentNum))
 
-    case Remove(key: K, timestamp) => sender ! ((map remove key), timestamp)
+    // only remove the value if current number is after the existing number
+    case Remove(key: K, currentNum, timestamp) if (actualMap get key map {_.updated} getOrElse 0) <= currentNum =>
+      sender ! ((actualMap remove key) map (_.value), timestamp)
 
-    case Clear => map.clear
+    case Clear => actualMap.clear
       subscriptions.clear
 
-    case EntireMap => sender ! map.toMap
+    case EntireMap => sender ! (actualMap map {case (key, value) => key -> value.value}).toMap
 
     case _ =>
   }
@@ -53,10 +58,11 @@ private class AsyncMap[K, V](owner: ActorRef) extends Actor with ActorLogging {
     }
   }
 
-  private def publish(key: K, value: V) {
+  private def publish(key: K, updatedValue: UpdatedValue[V]) {
     subscriptions get key foreach {subscribers =>
-      subscribers foreach {subscriber => subscriber.actor ! Value(value, subscriber.timestamp)}
-      subscribers.clear()
+      val (ready, notReady) = subscribers partition {_.preNum <= updatedValue.updated}
+      ready foreach {subscriber => subscriber.actor ! Value(updatedValue.value, subscriber.timestamp)}
+      subscriptions update (key, notReady)
     }
   }
 

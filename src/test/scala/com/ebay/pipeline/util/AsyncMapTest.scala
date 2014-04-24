@@ -184,24 +184,24 @@ class AsyncMapTest extends TestKit(ActorSystem())
     val a2 = system actorOf Props[TestActor]
     val a3 = system actorOf Props[TestActor]
 
-    a1 ! Get(mapRef, "a")
-    a2 ! Set(mapRef, "a", 1)
+    a1 ! TestActors.Get(mapRef, "a")
+    a2 ! TestActors.Set(mapRef, "a", 1)
     expectMsg(1)
 
-    a3 ! Remove(mapRef, "a")
+    a3 ! TestActors.Remove(mapRef, "a")
     expectMsg(1)
 
-    a3 ! Set(mapRef, "b", 2)
-    a2 ! Get(mapRef, "b")
-    a1 ! Get(mapRef, "b")
+    a3 ! TestActors.Set(mapRef, "b", 2)
+    a2 ! TestActors.Get(mapRef, "b")
+    a1 ! TestActors.Get(mapRef, "b")
     expectMsg(2)
     expectMsg(2)
 
-    a2 ! Clear(mapRef)
+    a2 ! TestActors.Clear(mapRef)
     Thread.sleep(1000)
-    a3 ! Get(mapRef, "b")
+    a3 ! TestActors.Get(mapRef, "b")
     expectMsgClass(classOf[Failure])
-    a1 ! Get(mapRef, "b")
+    a1 ! TestActors.Get(mapRef, "b")
     expectMsgClass(classOf[Failure])
 
     a1 ! PoisonPill
