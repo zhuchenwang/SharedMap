@@ -1,0 +1,12 @@
+compile
+clean
+compile
+test
+clean
+test
+reload
+test
+clean
+compile
+test
+exit

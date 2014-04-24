@@ -1,0 +1,67 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set(/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/WritePolicy.scala)[0m
+[0m[[0mdebug[0m] [0m	added: Set()[0m
+[0m[[0mdebug[0m] [0m	modified: Set(/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/AsyncMap.scala)[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set()[0m
+[0m[[0mdebug[0m] [0mModified external sources: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/AsyncMap.scala, /Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/WritePolicy.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/AsyncMap.scala, /Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/WritePolicy.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /Users/zhuwang/Documents/workspace/scala/pipeline/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.3[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.3[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 263cc969, interfacing (CompilerInterface) with Scala compiler version 2.10.3[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/classes:/Users/zhuwang/.sbt/boot/scala-2.10.3/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/zhuwang/Documents/workspace/scala/pipeline/target/scala-2.10/classes:/Users/zhuwang/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.3.2.jar:/Users/zhuwang/.ivy2/cache/com.typesafe/config/bundles/config-1.2.0.jar:/Users/zhuwang/.ivy2/cache/io.spray/spray-can/bundles/spray-can-1.3.1.jar:/Users/zhuwang/.ivy2/cache/io.spray/spray-io/bundles/spray-io-1.3.1.jar:/Users/zhuwang/.ivy2/cache/io.spray/spray-util/bundles/spray-util-1.3.1.jar:/Users/zhuwang/.ivy2/cache/io.spray/spray-http/bundles/spray-http-1.3.1.jar:/Users/zhuwang/.ivy2/cache/org.parboiled/parboiled-scala_2.10/bundles/parboiled-scala_2.10-1.1.6.jar:/Users/zhuwang/.ivy2/cache/org.parboiled/parboiled-core/bundles/parboiled-core-1.1.6.jar[0m
+[0m[[33mwarn[0m] [0m/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/AsyncMap.scala:31: abstract type pattern K is unchecked since it is eliminated by erasure[0m
+[0m[[33mwarn[0m] [0m    case Get(key: K, timestamp) => map get key match {[0m
+[0m[[33mwarn[0m] [0m                  ^[0m
+[0m[[33mwarn[0m] [0m/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/AsyncMap.scala:36: abstract type pattern K is unchecked since it is eliminated by erasure[0m
+[0m[[33mwarn[0m] [0m    case Set(key: K, value: V) => map update(key, value)[0m
+[0m[[33mwarn[0m] [0m                  ^[0m
+[0m[[33mwarn[0m] [0m/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/AsyncMap.scala:36: abstract type pattern V is unchecked since it is eliminated by erasure[0m
+[0m[[33mwarn[0m] [0m    case Set(key: K, value: V) => map update(key, value)[0m
+[0m[[33mwarn[0m] [0m                            ^[0m
+[0m[[33mwarn[0m] [0m/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/AsyncMap.scala:39: abstract type pattern K is unchecked since it is eliminated by erasure[0m
+[0m[[33mwarn[0m] [0m    case Remove(key: K, timestamp) => sender ! ((map remove key), timestamp)[0m
+[0m[[33mwarn[0m] [0m                     ^[0m
+[0m[[33mwarn[0m] [0mfour warnings found[0m
+[0m[[0mdebug[0m] [0mScala compilation took 3.919528 s[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive public inheritance: Set(/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/AsyncMap.scala, /Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/util/WritePolicy.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by direct dependency: Set(/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/PipelineManager.scala)[0m
+[0m[[0mdebug[0m] [0mNew invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set(/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/PipelineManager.scala)[0m
+[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /Users/zhuwang/Documents/workspace/scala/pipeline/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.3[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.3[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3c4c4574, interfacing (CompilerInterface) with Scala compiler version 2.10.3[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/classes:/Users/zhuwang/.sbt/boot/scala-2.10.3/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/zhuwang/Documents/workspace/scala/pipeline/target/scala-2.10/classes:/Users/zhuwang/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/jars/akka-actor_2.10-2.3.2.jar:/Users/zhuwang/.ivy2/cache/com.typesafe/config/bundles/config-1.2.0.jar:/Users/zhuwang/.ivy2/cache/io.spray/spray-can/bundles/spray-can-1.3.1.jar:/Users/zhuwang/.ivy2/cache/io.spray/spray-io/bundles/spray-io-1.3.1.jar:/Users/zhuwang/.ivy2/cache/io.spray/spray-util/bundles/spray-util-1.3.1.jar:/Users/zhuwang/.ivy2/cache/io.spray/spray-http/bundles/spray-http-1.3.1.jar:/Users/zhuwang/.ivy2/cache/org.parboiled/parboiled-scala_2.10/bundles/parboiled-scala_2.10-1.1.6.jar:/Users/zhuwang/.ivy2/cache/org.parboiled/parboiled-core/bundles/parboiled-core-1.1.6.jar[0m
+[0m[[33mwarn[0m] [0m/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/PipelineManager.scala:51: non-variable type argument String in type pattern Map[String,com.ebay.pipeline.handler.HandlerCtx] is unchecked since it is eliminated by erasure[0m
+[0m[[33mwarn[0m] [0m    case (request: HttpRequest, map: Map[String, HandlerCtx]) =>[0m
+[0m[[33mwarn[0m] [0m                                     ^[0m
+[0m[[33mwarn[0m] [0m/Users/zhuwang/Documents/workspace/scala/pipeline/src/main/scala/com/ebay/pipeline/PipelineManager.scala:53: non-variable type argument String in type pattern Map[String,com.ebay.pipeline.handler.HandlerCtx] is unchecked since it is eliminated by erasure[0m
+[0m[[33mwarn[0m] [0m    case (response: HttpResponse, map: Map[String, HandlerCtx]) =>[0m
+[0m[[33mwarn[0m] [0m                                       ^[0m
+[0m[[33mwarn[0m] [0mtwo warnings found[0m
+[0m[[0mdebug[0m] [0mScala compilation took 2.236377 s[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive public inheritance: Set()[0m
+[0m[[0mdebug[0m] [0mInvalidated by direct dependency: Set()[0m
+[0m[[0mdebug[0m] [0mNew invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m

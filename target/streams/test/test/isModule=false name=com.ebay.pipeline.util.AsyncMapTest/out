@@ -1,0 +1,21 @@
+[0m[[0minfo[0m] [0m[32mAsyncMapTest:[0m[0m
+[0m[[0minfo[0m] [0m[32mConstructor[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return a reference of empty map[0m[0m
+[0m[[0minfo[0m] [0m[32mempty method[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return a reference of empty map[0m[0m
+[0m[[0minfo[0m] [0m[32mget method[0m[0m
+[0m[[0minfo[0m] [0m[32m- should get the value set by others[0m[0m
+[0m[[0minfo[0m] [0m[32mget method[0m[0m
+[0m[[0minfo[0m] [0m[32m- should also get the value set by others within timeout[0m[0m
+[0m[[0minfo[0m] [0m[32mremove method[0m[0m
+[0m[[0minfo[0m] [0m[32m- should return None if the entry does not exist[0m[0m
+[0m[[0minfo[0m] [0m[32mremove method[0m[0m
+[0m[[0minfo[0m] [0m[32m- should remove an entry and return the value[0m[0m
+[0m[[0minfo[0m] [0m[32mget method[0m[0m
+[0m[[0minfo[0m] [0m[32m- should get the different values before and after a set[0m[0m
+[0m[[0minfo[0m] [0m[32mGetter[0m[0m
+[0m[[0minfo[0m] [0m[32m- should get the value twice if it calls get twice[0m[0m
+[0m[[0minfo[0m] [0m[32mAggregator[0m[0m
+[0m[[0minfo[0m] [0m[32m- should aggregate the result[0m[0m
+[0m[[0minfo[0m] [0m[32mAsyncMapRef[0m[0m
+[0m[[0minfo[0m] [0m[32m- should be shared through message passing[0m[0m
